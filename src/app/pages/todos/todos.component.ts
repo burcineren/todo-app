@@ -3,14 +3,20 @@ import { InProgressComponent } from './in-progress/in-progress.component';
 import { DoneComponent } from './done/done.component';
 import { TodoComponent } from "./todo/todo.component";
 import { ButtonModule } from 'primeng/button';
-
+import { Dialog } from 'primeng/dialog';
+import { InputTextModule } from 'primeng/inputtext';
+import { AvatarModule } from 'primeng/avatar';
 @Component({
   selector: 'todos',
   standalone: true,
-  imports: [InProgressComponent, DoneComponent, TodoComponent, ButtonModule],
+  imports: [InProgressComponent, DoneComponent, TodoComponent, ButtonModule, Dialog, InputTextModule, AvatarModule],
   templateUrl: './todos.component.html',
   styleUrl: './todos.component.scss'
 })
 export class TodosComponent {
+  visible: boolean = false;
 
+  showDialog() {
+    this.visible = true;
+  }
 }
