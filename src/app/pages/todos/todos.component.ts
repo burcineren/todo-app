@@ -6,10 +6,12 @@ import { ButtonModule } from 'primeng/button';
 import { Dialog } from 'primeng/dialog';
 import { InputTextModule } from 'primeng/inputtext';
 import { AvatarModule } from 'primeng/avatar';
+import { DragDropModule } from 'primeng/dragdrop';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @Component({
   selector: 'todos',
   standalone: true,
-  imports: [InProgressComponent, DoneComponent, TodoComponent, ButtonModule, Dialog, InputTextModule, AvatarModule],
+  imports: [InProgressComponent, DoneComponent, TodoComponent, ButtonModule, Dialog, InputTextModule, AvatarModule, DragDropModule],
   templateUrl: './todos.component.html',
   styleUrl: './todos.component.scss'
 })

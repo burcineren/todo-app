@@ -1,37 +1,43 @@
-<div class="container">
+<div class="">
   <div class="header">
-    <h2>Todos</h2>
-    <button class="new-task-btn" (click)="showDialog()" label="Show">
-      Yeni
-    </button>
+    <div class="conteiner d-flex justify-content-between">
+      <div class="">
+        <h2>Todos</h2>
+      </div>
+      <div class="">
+        <button class="new-task-btn" (click)="showDialog()" label="Show">
+          Yeni
+        </button>
+      </div>
+    </div>
     <p-dialog [(visible)]="visible" [modal]="true" [style]="{ width: '25rem' }">
       <ng-template #header>
         <div class="inline-flex items-center justify-center gap-2">
-          <p-avatar
-            image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
-            shape="circle"
-          />
-          <span class="font-bold whitespace-nowrap"> Amy Elsner </span>
+          <span class="font-bold whitespace-nowrap">Todos </span>
         </div>
       </ng-template>
-      <span class="p-text-secondary block mb-8">Update your information.</span>
       <div class="flex items-center gap-4 mb-4">
-        <label for="username" class="font-semibold w-24"> Username </label>
-        <input pInputText id="username" class="flex-auto" autocomplete="off" />
+        <label for="name" class="font-semibold w-24 mr-3"> Adı: </label>
+        <input pInputText id="name" class="flex-auto" autocomplete="off" />
       </div>
       <div class="flex items-center gap-4 mb-8">
-        <label for="email" class="font-semibold w-24">Email</label>
-        <input pInputText id="email" class="flex-auto" autocomplete="off" />
+        <label for="text" class="font-semibold w-24">İçeriği:</label>
+        <textarea
+          rows="5"
+          cols="30"
+          pTextarea
+          formControlName="desctiption"
+        ></textarea>
       </div>
       <ng-template #footer>
         <p-button
-          label="Cancel"
+          label="İptal"
           [text]="true"
           severity="secondary"
           (click)="visible = false"
         />
         <p-button
-          label="Save"
+          label="Kaydet"
           [outlined]="true"
           severity="secondary"
           (click)="visible = false"
@@ -42,15 +48,8 @@
 
   <div class="task-container">
     <div class="task-column">
-      <h3>Başlamadım</h3>
       <todo></todo>
-    </div>
-    <div class="task-column">
-      <h3>Devam Ediyor</h3>
       <in-progress></in-progress>
-    </div>
-    <div class="task-column">
-      <h3>Tamamlandı</h3>
       <done></done>
     </div>
   </div>

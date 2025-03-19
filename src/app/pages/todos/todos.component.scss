@@ -30,10 +30,20 @@ h3 {
 }
 
 .task-column {
-  flex: 1;
+  display: flex;
+  justify-content: center;
   background-color: #f8f9fa;
   padding: 20px;
-  border-radius: 15px;
-  border: 2px solid #000;
-  text-align: center;
+  width: 100%;
+}
+
+.p-card {
+  transition: transform 0.2s ease;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.p-card.cursor-move {
+  cursor: grab;
 }

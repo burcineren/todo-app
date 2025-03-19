@@ -1,4 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   font-family: "Arial", sans-serif;
   background: transparent !important;
@@ -7,4 +15,14 @@ body {
 p,
 h3 {
   font-family: inherit;
+}
+.p-card {
+  margin-right: 2rem;
+  background: #008cba !important;
+}
+.d-flex {
+  display: flex;
+}
+.justify-content-between {
+  justify-content: space-between;
 }
