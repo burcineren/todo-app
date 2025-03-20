@@ -10,6 +10,8 @@
 body {
   font-family: "Arial", sans-serif;
   background: transparent !important;
+  background: #fff !important;
+  color: #000;
 }
 
 p,
@@ -18,11 +20,24 @@ h3 {
 }
 .p-card {
   margin-right: 2rem;
-  background: #008cba !important;
+  background: #6f9a91 !important;
+  .p-card {
+    background: #a72c6b !important;
+    padding: 1rem;
+    width: 100%;
+  }
+}
+
+.p-card-title {
+  font-weight: bold !important;
+  text-align: center;
 }
 .d-flex {
   display: flex;
 }
 .justify-content-between {
   justify-content: space-between;
+}
+.p-card-body {
+  min-height: 210px;
 }
