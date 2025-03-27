@@ -1,0 +1,21 @@
+<div class="p-3 border border-stone-300 shadow-lg rounded-md bg-white">
+  <div class="header flex justify-between">
+    <div class="flex-1">{{ task.name }}</div>
+    <div class="flex gap-2 justify-end">
+      <i class="pi pi-pencil"></i>
+      <i class="pi pi-trash"></i>
+    </div>
+  </div>
+  <div class="content">
+    <p
+      class="line-clamp-1 truncate text-sm text-ellipsis"
+      [pTooltip]="task.content"
+    >
+      {{ task.content }}
+    </p>
+  </div>
+  <div class="date flex justify-between mt-2">
+    <div class="start-date text-xs opacity-60">{{ task.creationDate }}</div>
+    <div class="deadline text-xs opacity-60">{{ task.endDate }}</div>
+  </div>
+</div>

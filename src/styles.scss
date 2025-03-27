@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import "primeicons/primeicons.css";
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
@@ -8,45 +8,14 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  box-sizing: border-box;
+}
 body {
   font-family: "Arial", sans-serif;
   background: transparent !important;
   background: #fff !important;
   color: #000;
-}
-
-p,
-h3 {
-  font-family: inherit;
-}
-.p-card {
-  margin-right: 2rem;
-  background: #6f9a91 !important;
-  .p-card {
-    background: #a72c6b !important;
-    padding: 1rem;
-    width: 100%;
-  }
-}
-
-.p-card-title {
-  font-weight: bold !important;
-  text-align: center;
-}
-.d-flex {
-  display: flex;
-}
-.justify-content-between {
-  justify-content: space-between;
-}
-.p-card-body {
-  min-height: 210px;
-}
-.ng-trigger.ng-trigger-animation.ng-tns-c787154972-0.p-dialog {
-  background: #fff;
-  color: #000;
-}
-.p-inputtext,
-textarea {
-  background: #ffffffc0 !important;
+  width: 100vw;
+  overflow-x: hidden;
 }

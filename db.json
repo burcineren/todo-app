@@ -1,0 +1,84 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "Grocery Shopping",
+      "content": "Buy milk, eggs, and bread",
+      "creationDate": "2025-03-20T10:00:00Z",
+      "endDate": "2025-03-22T10:00:00Z",
+      "status": 1
+    },
+    {
+      "id": 2,
+      "title": "Workout",
+      "content": "Do a 30-minute cardio session",
+      "creationDate": "2025-03-19T08:30:00Z",
+      "endDate": "2025-03-19T09:30:00Z",
+      "status": 2
+    },
+    {
+      "id": 3,
+      "title": "Read a book",
+      "content": "Finish reading 'Atomic Habits'",
+      "creationDate": "2025-03-18T15:00:00Z",
+      "endDate": "2025-03-25T15:00:00Z",
+      "status": 3
+    },
+    {
+      "id": 4,
+      "title": "Meeting with team",
+      "content": "Project update call",
+      "creationDate": "2025-03-21T11:00:00Z",
+      "endDate": "2025-03-21T12:00:00Z",
+      "status": 1
+    },
+    {
+      "id": 5,
+      "title": "Dentist Appointment",
+      "content": "Routine check-up",
+      "creationDate": "2025-03-17T09:00:00Z",
+      "endDate": "2025-03-20T09:30:00Z",
+      "status": 1
+    },
+    {
+      "id": 6,
+      "title": "Write blog post",
+      "content": "Topic: JavaScript tips and tricks",
+      "creationDate": "2025-03-15T14:00:00Z",
+      "endDate": "2025-03-23T18:00:00Z",
+      "status": 3
+    },
+    {
+      "id": 7,
+      "title": "Call parents",
+      "content": "Weekly catch-up",
+      "creationDate": "2025-03-21T20:00:00Z",
+      "endDate": "2025-03-21T20:30:00Z",
+      "status": 1
+    },
+    {
+      "id": 8,
+      "title": "Plan vacation",
+      "content": "Research destinations and costs",
+      "creationDate": "2025-03-10T13:00:00Z",
+      "endDate": "2025-04-01T13:00:00Z",
+      "status": 1
+    },
+    {
+      "id": 9,
+      "title": "Pay bills",
+      "content": "Electricity and internet",
+      "creationDate": "2025-03-16T10:00:00Z",
+      "endDate": "2025-03-18T10:00:00Z",
+      "status": 2
+    },
+    {
+      "id": 10,
+      "title": "Fix bike",
+      "content": "Replace tire and check brakes",
+      "creationDate": "2025-03-12T17:00:00Z",
+      "endDate": "2025-03-22T17:00:00Z",
+      "status": 3
+    }
+  ]
+}
