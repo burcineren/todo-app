@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { TodoCardComponent } from '../todo-card/todo-card.component';
 import { TodoStatusLookup } from '../../../../core/enums/todo-status.enum';
 import { StatusLabelPipe } from '../../../../core/pipes/status-label.pipe';
@@ -11,7 +11,7 @@ import { StatusLabelPipe } from '../../../../core/pipes/status-label.pipe';
   styleUrl: './todo-done-column.component.scss'
 })
 export class TodoDoneColumnComponent {
-  title = TodoStatusLookup;
+  title = signal(TodoStatusLookup);
 
   trackById(index: number, item: any): number {
     return item.id;
