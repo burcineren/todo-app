@@ -1,10 +1,21 @@
 <div class="w-full p-6">
   <div class="">
     <h2>Todos</h2>
+    <app-todo-form />
   </div>
-  <div class="w-full flex gap-6 border p-6 rounded-md justify-center">
-    <app-todo-start-column class="w-1/3" />
-    <app-todo-progress-column class="w-1/3" />
-    <app-todo-done-column class="w-1/3" />
+  <div class="border p-6 rounded-md">
+    <div class="flex justify-end">
+      <button
+        class="p-3 bg-violet-500 rounded-md mb-6 text-white"
+        (click)="addTodoHandle()"
+      >
+        Ekle
+      </button>
+    </div>
+    <div class="w-full flex gap-6 justify-center">
+      <app-todo-start-column class="w-1/3" />
+      <app-todo-progress-column class="w-1/3" />
+      <app-todo-done-column class="w-1/3" />
+    </div>
   </div>
 </div>

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { TooltipModule } from 'primeng/tooltip';
+import { TodosService } from '../../todos.service';
 
 @Component({
   selector: 'app-todo-card',
@@ -15,4 +16,8 @@ export class TodoCardComponent {
     creationDate: '2025-03-20',
     endDate: '2025-03-25',
   };
+  constructor(private todosService: TodosService) { }
+  addTodoHandle() {
+    this.todosService.toogleDialog();
+  }
 }

@@ -2,7 +2,7 @@
   <div class="header flex justify-between">
     <div class="flex-1">{{ task.name }}</div>
     <div class="flex gap-2 justify-end">
-      <i class="pi pi-pencil"></i>
+      <i class="pi pi-pencil" (click)="addTodoHandle()"></i>
       <i class="pi pi-trash"></i>
     </div>
   </div>

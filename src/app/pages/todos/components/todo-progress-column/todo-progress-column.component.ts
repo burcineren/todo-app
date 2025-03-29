@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { TodoCardComponent } from '../todo-card/todo-card.component';
-import { TodoStatusLookup } from '../../../../core/enums/todo-status.enum';
+import { TodoStatusEnum, TodoStatusLookup } from '../../../../core/enums/todo-status.enum';
 import { StatusLabelPipe } from '../../../../core/pipes/status-label.pipe';
 
 @Component({
@@ -11,7 +11,7 @@ import { StatusLabelPipe } from '../../../../core/pipes/status-label.pipe';
   styleUrl: './todo-progress-column.component.scss'
 })
 export class TodoProgressColumnComponent {
-  title = signal(TodoStatusLookup);
+  todoStatusEnum = TodoStatusEnum;
 
   trackById(index: number, item: any): number {
     return item.id;

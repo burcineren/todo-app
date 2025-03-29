@@ -1,0 +1,43 @@
+<form class="card flex justify-center" [formGroup]="form">
+  <p-dialog
+    (onHide)="onHideHandler()"
+    header="Edit Profile"
+    [(visible)]="visible"
+    [style]="{ width: '50rem', height: '35rem' }"
+  >
+    <span class="p-text-secondary block mb-8">Update your information.</span>
+    <div class="flex items-center gap-4 mb-4">
+      <label for="title" class="font-semibold w-24">Title:</label>
+      <input
+        pInputText
+        id="title"
+        class="flex-auto"
+        formControlName="title"
+        autocomplete="off"
+      />
+    </div>
+    <div class="flex items-center gap-4 mb-8">
+      <label for="text" class="font-semibold w-24">Content:</label>
+      <input
+        pInputText
+        id="text"
+        class="flex-auto"
+        formControlName="content"
+        autocomplete="off"
+      />
+    </div>
+    <div class="flex items-center gap-4 mb-8">
+      <label for="text" class="font-semibold w-24">End Date:</label>
+      <p-datepicker
+        [showIcon]="true"
+        formControlName="endDate"
+        inputId="buttondisplay"
+        [showOnFocus]="false"
+      />
+    </div>
+    <div class="flex justify-end gap-2">
+      <p-button label="Cancel" severity="secondary" (click)="closeDialog()" />
+      <p-button label="Save" (click)="closeDialog()" />
+    </div>
+  </p-dialog>
+</form>
