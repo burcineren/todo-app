@@ -7,6 +7,7 @@
     </h3>
   </div>
 
-  <app-todo-card></app-todo-card>
-  <app-todo-card></app-todo-card>
+  @for (todo of todos; track todo.id) {
+  <app-todo-card [todoItem]="todo" />
+  }
 </div>

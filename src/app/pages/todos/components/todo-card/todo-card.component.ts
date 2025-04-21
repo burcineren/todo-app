@@ -1,6 +1,8 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TooltipModule } from 'primeng/tooltip';
 import { TodosService } from '../../todos.service';
+import { TodoModel } from '../../models/todo.model';
+import { TodoStatusEnum } from '../../../../core/enums/todo-status.enum';
 
 @Component({
   selector: 'app-todo-card',
@@ -10,14 +12,22 @@ import { TodosService } from '../../todos.service';
   styleUrl: './todo-card.component.scss'
 })
 export class TodoCardComponent {
-  task = {
-    name: 'Örnek Görev',
-    content: 'Bu bir örnek görev içeriğidir.',
-    creationDate: '2025-03-20',
-    endDate: '2025-03-25',
-  };
+  @Input() todoItem!: TodoModel;
+  todoStatusEnum = TodoStatusEnum;
+
   constructor(private todosService: TodosService) { }
   addTodoHandle() {
-    this.todosService.toogleDialog();
+    this.todosService.toogleDialog("Edit", this.todoItem);
   }
+  deleteTodo() {
+    this.todosService.deleteTodo(this.todoItem).subscribe();
+  }
+  todoStatuUpdateHandler(action: "Down" | "Up") {
+    const todo = {
+      ...this.todoItem,
+      status: action === "Down" ? --this.todoItem.status : ++this.todoItem.status
+    }
+    this.todosService.updateTodo(todo).subscribe();
+  }
+
 }

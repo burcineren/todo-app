@@ -6,5 +6,7 @@
       {{ todoStatusEnum.IN_PROGRESS | statusLabel }}
     </h3>
   </div>
-  <app-todo-card />
+  @for (todo of todos; track todo.id) {
+  <app-todo-card [todoItem]="todo" />
+  }
 </div>

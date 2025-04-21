@@ -1,4 +1,4 @@
-import { Component, OnInit, Signal, computed, signal } from '@angular/core';
+import { Component, OnInit, Signal, computed, effect, signal } from '@angular/core';
 import { TodosService } from './todos.service';
 import { TodoModel } from './models/todo.model';
 import { CommonModule } from '@angular/common';
@@ -16,24 +16,25 @@ import { TodoFormComponent } from './components/todo-form/todo-form.component';
   styleUrl: './todo.component.scss'
 })
 export class TodoComponent implements OnInit {
-  todos$ = signal<TodoModel[]>([]);
+  todos$ = computed<TodoModel[]>(() => this.todoService.todos$());
   todo: TodoModel[] = [];
   inProgress: TodoModel[] = [];
   done: TodoModel[] = [];
-  constructor(private todoService: TodosService) { }
-
-  ngOnInit() {
-
-    this.todoService.getAllTodos().subscribe((todos: TodoModel[]) => {
-      this.todo = todos.filter(todo => todo.status === TodoStatusEnum.TODO);
-      this.inProgress = todos.filter(todo => todo.status === TodoStatusEnum.IN_PROGRESS);
-      this.done = todos.filter(todo => todo.status === TodoStatusEnum.DONE);
-
-      this.todos$.set(todos);
-      console.log(todos);
+  constructor(private todoService: TodosService) {
+    effect(() => {
+      console.log(this.todos$());
+      this.todo = this.todos$().filter(todo => todo.status === TodoStatusEnum.TODO);
+      this.inProgress = this.todos$().filter(todo => todo.status === TodoStatusEnum.IN_PROGRESS);
+      this.done = this.todos$().filter(todo => todo.status === TodoStatusEnum.DONE);
     });
   }
+
+  ngOnInit() {
+    if (this.todos$().length == 0) {
+      this.todoService.getAllTodos().subscribe();
+    }
+  }
   addTodoHandle() {
-    this.todoService.toogleDialog();
+    this.todoService.toogleDialog("Add");
   }
 }
