@@ -16,21 +16,21 @@ import { TodoFormComponent } from './components/todo-form/todo-form.component';
   styleUrl: './todo.component.scss'
 })
 export class TodoComponent implements OnInit {
-  todos$ = computed<TodoModel[]>(() => this.todoService.todos$());
+  todos$ = computed<TodoModel[]>(() => this.todoService.todoStore$().todos);
   todo: TodoModel[] = [];
   inProgress: TodoModel[] = [];
   done: TodoModel[] = [];
   constructor(private todoService: TodosService) {
     effect(() => {
       console.log(this.todos$());
-      this.todo = this.todos$().filter(todo => todo.status === TodoStatusEnum.TODO);
-      this.inProgress = this.todos$().filter(todo => todo.status === TodoStatusEnum.IN_PROGRESS);
-      this.done = this.todos$().filter(todo => todo.status === TodoStatusEnum.DONE);
+      this.todo = this.todos$()?.filter(todo => todo.status === TodoStatusEnum.TODO);
+      this.inProgress = this.todos$()?.filter(todo => todo.status === TodoStatusEnum.IN_PROGRESS);
+      this.done = this.todos$()?.filter(todo => todo.status === TodoStatusEnum.DONE);
     });
   }
 
   ngOnInit() {
-    if (this.todos$().length == 0) {
+    if (!this.todos$() || this.todos$()?.length == 0) {
       this.todoService.getAllTodos().subscribe();
     }
   }

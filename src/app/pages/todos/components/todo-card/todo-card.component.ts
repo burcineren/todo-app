@@ -20,7 +20,7 @@ export class TodoCardComponent {
     this.todosService.toogleDialog("Edit", this.todoItem);
   }
   deleteTodo() {
-    this.todosService.deleteTodo(this.todoItem).subscribe();
+    this.todosService.deleteTodo(this.todoItem)
   }
   todoStatuUpdateHandler(action: "Down" | "Up") {
     const todo = {

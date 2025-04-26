@@ -14,9 +14,9 @@ import { TodoModel } from '../../models/todo.model';
   styleUrl: './todo-form.component.scss'
 })
 export class TodoFormComponent {
-  visible$: Signal<boolean> = computed(() => this.todosService.isTodoFormVisible$());
+  visible$: Signal<boolean> = computed(() => this.todosService.todoStore$().isTodoFormVisible);
   visible: boolean = false;
-  editTodoItem: Signal<TodoModel | null> = computed(() => this.todosService.editTodoItem$());
+  editTodoItem: Signal<TodoModel | null> = computed(() => this.todosService.todoStore$().editTodoItem);
   constructor(private todosService: TodosService) {
     effect(() => {
       this.visible = this.visible$();
